@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
         fgets(input, 2048, stdin);
 
         /* Echo input back at user */
-        printf("Echo: %s", input");
+        printf("Echo: %s", input);
 
     }
 
