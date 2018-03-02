@@ -1,0 +1,2 @@
+This .txt file has been initialized in order to test git connection from my
+Rasberry PI to my github
