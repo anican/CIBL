@@ -1,8 +1,10 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <editline/readline.h>
 
 /* basic read-evaluate-print-loop (REPL) that echoes input */ 
 /* buffer for storing user input */
-static char input[2048];
 
 int main(int argc, char** argv) {
     /* Print Version and Exit Information */
@@ -12,15 +14,17 @@ int main(int argc, char** argv) {
     /* Infinite Loop */
     while (1) { 
         
+        char* input = readline("lispy> ");  
+
         /* Output our argument */
-        fputs("lispy> ", stdout);
-        
-        /* Read a line of user input of max size 2048 */
-        fgets(input, 2048, stdin);
-
+        add_history(input);
+         
         /* Echo input back at user */
-        printf("Echo: %s", input);
-
+        printf("Echo: %s\n", input);
+        
+        /* Free retrieved input */
+        free(input);
+        
     }
 
     return 0;
