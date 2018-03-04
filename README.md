@@ -6,7 +6,7 @@ project
 Current support is limited to OSX and Linux
 
 ####
-'' (list 1 2 (quote foo)) ''
+`` (list 1 2 (quote foo)) ``
 
 #### Canu BNF
 Backus–Naur Form (BNF) forthcoming...
