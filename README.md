@@ -12,4 +12,4 @@ Current support is limited to OSX and Linux
 Backus–Naur Form (BNF) forthcoming...
 
 ## Blog
-See anican.github.io
+See my [blog](https://anican.github.io/blog/) for my thoughts on LISP (post forthcoming...)
