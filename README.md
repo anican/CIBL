@@ -4,7 +4,7 @@ project. I intend to use CIBL for pedagoguical purposes as part of my work in
 UW CSE Outreach. 
 
 ## Naming and Influences
-CIBL's Influenced By Lisp :smile:
+Well... CIBL's Influenced By Lisp! :smile: (I couldn't resist the recursive acronym)
 
 ## Syntax and Design
 Current support is limited to OSX and Linux
