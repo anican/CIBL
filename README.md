@@ -1,10 +1,10 @@
 # CIBL 
 CIBL is a minimal Lisp implementation built in C as a personal linguistics
-project. I intend to use CIBL for pedagoguical purposes as part of my work in
-UW CSE Outreach. 
+project. I intend to use CIBL for educational purposes as part of my work
+teaching programming workshops for UW CSE Outreach. 
 
-## Naming and Influences
-CIBL's Influenced By Lisp :smile:
+## Naming and Influences (/ˈkɪbəl/)
+CIBL's Influenced By Lisp! :smile:
 
 ## Syntax and Design
 Current support is limited to OSX and Linux
@@ -12,7 +12,7 @@ Current support is limited to OSX and Linux
 ####
 `` (list 1 2 (quote foo)) ``
 
-#### Canu BNF
+#### CIBL BNF
 Backus–Naur Form (BNF) forthcoming...
 
 ## Blog
