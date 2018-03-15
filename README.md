@@ -10,7 +10,7 @@ CIBL's Influenced By Lisp! :smile:
 Current support is limited to OSX and Linux
 
 #### Polish Notation 
-(+ 5 (* 8 2))
+`` (+ 5 (* 8 2)) ``
 #### Linked Lists
 `` (list 1 2 (quote foo)) ``
 
