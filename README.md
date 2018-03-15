@@ -1,4 +1,4 @@
-# CIBL 
+#CIBL 
 CIBL is a minimal Lisp implementation built in C as a personal linguistics
 project. I intend to use CIBL for educational purposes as part of my work
 teaching programming workshops for UW CSE Outreach. 
@@ -9,7 +9,9 @@ CIBL's Influenced By Lisp! :smile:
 ## Syntax and Design
 Current support is limited to OSX and Linux
 
-####
+#### Polish Notation 
+(+ 5 (* 8 2))
+#### Linked Lists
 `` (list 1 2 (quote foo)) ``
 
 #### CIBL BNF
