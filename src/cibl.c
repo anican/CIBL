@@ -22,6 +22,57 @@ void add_history(char* unused) {}
 #include <editline/readline.h>
 #endif
 
+/* Enumeration of possible language value types */
+enum { NUMBER, ERROR };
+
+/* Enumeration of possible error types */
+enum { DIV_ZERO, UNKNOWN_OPERATOR, LONG_OVERFLOW};
+
+/* CIBL Value structure */
+typedef struct {
+    int type;
+    long num;
+    int error;
+} value;
+
+/* Create a new number type 'value' */
+value number_value(long x) {
+    value val;
+    val.type = NUMBER;
+    val.num = x;
+    return v;
+}
+
+/* Create a new error type 'value' */
+value error_value(int x) {
+    value val;
+    val.type = ERROR;
+    v.error = x;
+    return val;
+}
+
+void print_value(value val) {
+    switch (val.type) {
+        /* case for if the value is a number */
+        case NUMBER:
+            printf("%li", val.num);
+        break;
+        /* case for if the value is an error */
+        case ERROR:
+            /* check the type of error it is */
+            if (val.error == DIV_ZERO) {
+                printf("Error: Division By Zero!");
+            } else if (val.error == UNKNOWN_OPERATOR) {
+                printf("Error: Invalid Operator!"); 
+            } else if (val.error = LONG_OVERFLOW) {
+                printf("Error: Integer Overflow!");
+            }
+        break;
+    }
+}
+
+
+
 long eval_operator(long x, char* op, long y) {
     if (strcmp(op, "+") == 0) {
         return x + y;
