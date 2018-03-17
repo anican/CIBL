@@ -13,7 +13,7 @@ Current support is limited to OSX and Linux
 `` (+ 5 (* 8 2)) ``
 #### Linked Lists?
 Unlike most Lisps, which utilize the Linked List, CIBL's S-Expressions are 
-instead built up using syntax trees and pointers.
+instead built up using explicitly sized arrays and pointers.
 
 `` (list 1 2 (quote foo)) ``
 #### CIBL BNF
