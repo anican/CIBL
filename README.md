@@ -11,9 +11,11 @@ Current support is limited to OSX and Linux
 
 #### Polish Notation 
 `` (+ 5 (* 8 2)) ``
-#### Linked Lists
-`` (list 1 2 (quote foo)) ``
+#### Linked Lists?
+Unlike most Lisps, which utilize the Linked List, CIBL's S-Expressions are 
+instead built up using explicitly sized arrays and pointers.
 
+`` (list 1 2 (quote foo)) ``
 #### CIBL BNF
 Backus–Naur Form (BNF) forthcoming...
 
