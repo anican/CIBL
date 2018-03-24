@@ -101,57 +101,60 @@ value* read_number_value(mpc_ast_t* t) {
 }
 
 value* read_value(mpc_ast_t* t) {
-    /* If the value is a number or a symbol, return converted t */
     if (strstr(t->tag, "number")) {
         return read_number_value(t);
     }
-    if (strstr(t->tag, "symbol")) { 
+    if (strstr(t->tag, "symbol")) {
         return symbol_value(t->contents);
     }
-
+    
     value* x = NULL;
     if (strcmp(t->tag, ">") == 0) {
-        x = sexpression_value(); 
+        x = sexpression_value();
     }
     if (strstr(t->tag, "sexpression")) {
-        x = sexpression_value(); 
+        x = sexpression_value();
     }
-
-    /* Fill list with all remaining valid expressions */
+    
     for (int i = 0; i < t->children_num; i++) {
-        /* Ignore reading the value if the current character is a expression
-         * parenthesis or a regular expression
-         */
-        if (strcmp(t->children[i]->contents, "(") == 0 ||
-            strcmp(t->children[i]->contents, ")") == 0 ||
-            strcmp(t->children[i]->tag,  "regex")) {
-            continue;
-        }
-        x = add_value(x, read_value(t->children[i]);
+        if (strcmp(t->children[i]->contents, "(") == 0) { continue; }
+        if (strcmp(t->children[i]->contents, ")") == 0) { continue; }
+        if (strcmp(t->children[i]->tag,  "regex") == 0) { continue; }
+        x = add_value(x, read_value(t->children[i]));
     }
     return x;
-void print_value(value val) {
-    switch (val.type) {
-        /* case for if the value is a number */
-        case NUMBER:
-            printf("%li", val.num);
-        break;
-        /* case for if the value is an error */
-        case ERROR:
-            /* check the type of error it is */
-            if (val.error == DIV_ZERO) {
-                printf("Error: Division By Zero!");
-            } else if (val.error == UNKNOWN_OPERATOR) {
-                printf("Error: Invalid Operator!"); 
-            } else if (val.error == LONG_OVERFLOW) {
-                printf("Error: Integer Overflow!");
-            }
-        break;
+}
+
+value* add_value(value* v, value x) {
+    v->count++;
+    v->cell = realloc(v->cell, sizeof(value*) * v->count);
+    v->cell[v->count-1] = x;
+    return v;
+}
+
+void print_expression_value(value* v, char open, char close) {
+    putchar(open);
+    for (int i = 0; i < v->count; i++) {
+        print_value(v->cell[i]);
+        
+        if (i != (v->count-1)) {
+            putchar(' ');
+        }
+    }
+    putchar(close);
+}
+
+void print_value(value* v) {
+    switch (val->type) {
+        case NUMBER: printf("%li", v->num); break;
+        case ERROR: printf("Error: %s", v-error); break;
+        case SYMBOL: printf("%s", v->symbol); break;
+        case SEXPRESSION: print_expression_value(v, '(', ')'); break;
     }
 }
 
-void println_value(value val) {
-    print_value(val);
+void println_value(value* v) {
+    print_value(v);
     putchar('\n');
 }
 
@@ -234,7 +237,7 @@ int main(int argc, char** argv) {
         mpc_result_t r;
         if (mpc_parse("<stdin>", input, Lispy, &r)) {
             /* If parsed input is well-formed */
-            value result = eval(r.output);
+            value* result = eval(r.output);
             println_value(result);
             mpc_ast_delete(r.output);
         } else {
