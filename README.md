@@ -7,7 +7,7 @@ teaching programming workshops for UW CSE Outreach.
 CIBL's Influenced By Lisp! :smile:
 
 ## Syntax and Design
-Current support is limited to OSX and Linux
+Build on OSX. Support for Windows, OSX, and Linux
 
 #### Polish Notation 
 `` (+ 5 (* 8 2)) ``
