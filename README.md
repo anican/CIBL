@@ -1,7 +1,7 @@
 # CIBL
 CIBL is two separate minimal Lisp implementation built in C and Python respectively as a personal linguistics
 project. I intend to use CIBL for educational purposes as part of my work
-teaching programming workshops for UW CSE Outreach. 
+teaching programming workshops for UW CSE Outreach. The python interpreter is ready to go but the C intepreter is still in progress!
 
 ## Naming and Influences (/ˈkɪbəl/)
 CIBL Is Basically Lisp! :smile: (I couldn't resist the recursive acronym)
