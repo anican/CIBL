@@ -36,7 +36,7 @@ def parse_tokens(tokens):
     """Parse list of program tokens
 
     Keyword arguments:
-    tokens -- list of program tokens of a Scheme expression
+    tokens -- list of program tokens of a CIBL expression
     """
     if len(tokens) == 0:
         # Parsing an empty list
@@ -73,13 +73,13 @@ def atom(token):
             # Determine if token can be parsed as a float
             return float(token)
         except ValueError:
-            # token must be a Scheme Symbol rather than a number
+            # token must be a CIBL Symbol rather than a number
             return Symbol(token)
 
 #### Environments
 
 def standard_env():
-    """Environment for standard Scheme procedures
+    """Environment for standard cibl procedures
     Users can define their own procedures with the following expression:
     (define <symbol> <value>)
 
@@ -146,7 +146,8 @@ def lispstr(exp):
 #### Procedures:
 
 class Procedure(object):
-    """User defined Scheme Procedure
+    """User defined CIBL
+    Procedure
 
     """
     def __init__(self, params, body, env):
