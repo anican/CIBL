@@ -7,7 +7,7 @@ teaching programming workshops for UW CSE Outreach. The python interpreter is re
 CIBL Is Basically Lisp! :smile: (I couldn't resist the recursive acronym)
 
 ## Syntax and Design
-Build on OSX. Support for Windows, OSX, and Linux
+Built on OSX. Final support will be for Windows, OSX, and Linux
 
 #### Polish Notation 
 `` (+ 5 (* 8 2)) ``
